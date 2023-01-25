@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongo-Handson</title>
+<style>
+    body{
+        background-color: wheat;    
+    }
+    h3{
+    color: purple;
+    }
+</style>
+</head>
+<body>
+
+    <header><h1>Database Assignment-1</h1></header>
+    <hr>
+<a href=""https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1640781204638-employee.json">Click to access data</a>
+    
+
+<h3>1. Create a database , give it name like ""Human_Resource"". Create a collection inside this named ""employee""</h3>
+<h4>use Human_Resource</h4>
+<p><b>db.employee.insertMany</b>([{ "firstName": "John", "lastName": "Doe", "salary": "25000", "department": "HR", "lastCompany": "X", "lastSalary": "10000", "overallExp": "2", "contactInfo": "1234567890", "yearGrad": "2016", "gradStream": "CSE" }, { "firstName": "Rohan", "lastName": "Jame", "salary": "30000", "department": "Technical", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "1", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "Doe", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "20000", "overallExp": "1", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "ECE" }, { "firstName": "Sao", "lastName": "Avika", "salary": "30000", "department": "Sales", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "2", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "roh", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "15000", "overallExp": "2", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "EEE" }, { "firstName": "Rohan", "lastName": "Jame", "salary": "30000", "department": "Technical", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "1", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "Doe", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "20000", "overallExp": "1", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "ECE" }, { "firstName": "Sao", "lastName": "Avika", "salary": "30000", "department": "Sales", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "2", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "Doe", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "15000", "overallExp": "2", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "EEE" }, { "firstName": "Rohan", "lastName": "Jame", "salary": "30000", "department": "Technical", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "1", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "Doe", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "20000", "overallExp": "1", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "ECE" }, { "firstName": "Sao", "lastName": "Avika", "salary": "30000", "department": "Sales", "lastCompany": "Y", "lastSalary": "15000", "overallExp": "2", "contactInfo": "1234567860", "yearGrad": "2015", "gradStream": "CSE" }, { "firstName": "Jame", "lastName": "Doe", "salary": "35000", "department": "Accounts", "lastCompany": "Z", "lastSalary": "15000", "overallExp": "2", "contactInfo": "123567890", "yearGrad": "2019", "gradStream": "EEE" }])</p>
+<br>
+
+<h3>2. Query the collection ""employee"" and list all the documents</h3>
+<h4>db.employee.find().pretty()</h4>
+
+<h3>3. Query the collection ""employee"" and list the employees who are having salary more than 30000</h3>
+<h4>db.employee.find({salary:{$gt:'30000'}})</h4>
+
+<h3>4. Query the collection ""employee"" and list the employees who are having experience more than 2 years.</h3>
+<h4>db.employee.find({overallExp:{$gt:'2'}})</h4>
+
+<h3>5. Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience more than 1 year</h3>
+<h4>db.employee.find({yearGrad:{$gt:"2"},overallExp:{$gt:"1"}})</h4>
+
+<h3>6. Query the collection ""employee"" and update the salary of the employee whose salary is greater than 70000 to 65000.</h3>
+<h4>db.employee.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})</h4>
+
+<h3>7. Delete all the documents from ""employee"" where last company is Y"</h3>
+<h4>db.employee.deleteMany({lastCompany:"Y"})</h4>
+
+</body>
+</html>
