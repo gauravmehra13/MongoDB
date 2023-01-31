@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
+    "mongosh": "^1.6.2",
+    "nodemon": "^2.0.20"
+  },
+  "name": "handson2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "develop": "nodemon app.js"
+  },
+  "author": "gaurav",
+  "license": "ISC",
+  "description": ""
+}
